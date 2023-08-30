@@ -90,7 +90,7 @@ Em caso de empate retornar 0.
 
 **Exemplo:** No input de exemplo, CS's 2 e 4 estão de folga. O CS 1 vai atender os clientes de tamanho até 60, portanto clientes 2, 4, 5, 6 enquanto o CS 3 vai atender os clientes 1 e 3.
 
-Para este exemplo o retorno deve ser o id do 1 que é o CS que atende 4 clientes:
+Para este exemplo o retorno deve ser 1, que é o id do CS que atende 4 clientes:
 
 ```
 1

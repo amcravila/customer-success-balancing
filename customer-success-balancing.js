@@ -130,3 +130,36 @@ test("Scenario 8", () => {
   const csAway = [2, 4];
   expect(customerSuccessBalancing(css, customers, csAway)).toEqual(1);
 });
+
+test("Scenario 9", () => {
+  const css = mapEntities([60, 40, 95, 75]);
+  const customers = mapEntities([90, 70, 20, 40, 60, 10]);
+  const csAway = [];
+
+  expect(customerSuccessBalancing(css, customers, csAway)).toEqual(2);
+});
+
+test("Scenario 10 - All CSs have different levels, some customers unassigned", () => {
+  const css = mapEntities([10, 20, 30, 40, 50]);
+  const customers = mapEntities([5, 15, 25, 35, 45]);
+  const csAway = [];
+
+  expect(customerSuccessBalancing(css, customers, csAway)).toEqual(0);
+});
+
+test("Scenario 11 - All CSs away, some customers unassigned", () => {
+  const css = mapEntities([10, 20, 30, 40, 50]);
+  const customers = mapEntities([5, 15, 25, 35, 45]);
+  const csAway = [10, 20, 30, 40, 50];
+
+  expect(customerSuccessBalancing(css, customers, csAway)).toEqual(0);
+});
+
+test("Scenario 12 - CSs and customers with very close scores", () => {
+  const css = mapEntities([100, 101, 102, 103, 104]);
+  const customers = mapEntities([100, 101, 102, 103, 104]);
+  const csAway = [];
+
+  expect(customerSuccessBalancing(css, customers, csAway)).toEqual(0);
+});
+

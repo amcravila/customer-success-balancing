@@ -147,12 +147,12 @@ test("Scenario 10 - All CSs have different levels, some customers unassigned", (
   expect(customerSuccessBalancing(css, customers, csAway)).toEqual(0);
 });
 
-test("Scenario 11 - All CSs away, some customers unassigned", () => {
-  const css = mapEntities([10, 20, 30, 40, 50]);
+test("Scenario 11 - Only one CS available", () => {
+  const css = mapEntities([10]);
   const customers = mapEntities([5, 15, 25, 35, 45]);
-  const csAway = [10, 20, 30, 40, 50];
+  const csAway = [];
 
-  expect(customerSuccessBalancing(css, customers, csAway)).toEqual(0);
+  expect(customerSuccessBalancing(css, customers, csAway)).toEqual(1);
 });
 
 test("Scenario 12 - CSs and customers with very close scores", () => {
